@@ -1,4 +1,9 @@
 #include "wxDFeditMain.h"
+#include <string>
+
+#define DFEDIT_VERSION "3.0"
+
+using namespace std;
 
 //helper functions
 enum wxbuildinfoformat {
@@ -21,6 +26,24 @@ wxString wxbuildinfo(wxbuildinfoformat format)
     }
 
     return wxbuild;
+}
+
+wxString wxDFeditFrame::dfeditversion(string versionType)
+{
+    wxString version = wxString();
+    if(versionType == "long")
+    {
+        version << _T("Dragon Force Edit ");
+        version << _T(DFEDIT_VERSION);
+    } else if(versionType == "short"){
+        version << _T("DFedit ");
+        version << _T(DFEDIT_VERSION);
+    } else {
+        version << _T("DFedit ");
+        version << _T(DFEDIT_VERSION);
+    }
+
+    return version;
 }
 
 BEGIN_EVENT_TABLE(wxDFeditFrame, wxFrame)
@@ -69,5 +92,9 @@ void wxDFeditFrame::OnQuit(wxCommandEvent &event)
 void wxDFeditFrame::OnAbout(wxCommandEvent &event)
 {
     wxString msg = wxbuildinfo(long_f);
-    wxMessageBox(msg, _("Welcome to..."));
+
+    wxString aboutTitle = _T("About ");
+    aboutTitle << dfeditversion("short");
+
+    wxMessageBox(msg, aboutTitle);
 }

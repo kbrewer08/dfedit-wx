@@ -5,7 +5,7 @@ IMPLEMENT_APP(wxDFeditApp);
 
 bool wxDFeditApp::OnInit()
 {
-    wxDFeditFrame* frame = new wxDFeditFrame(0L, _("wxWidgets Application Template"));
+    wxDFeditFrame* frame = new wxDFeditFrame(0L, wxDFeditFrame::dfeditversion("long"));
 
     frame->Show();
 

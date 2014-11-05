@@ -2,14 +2,20 @@
 #define WXDFEDITMAIN_H
 
 #include <wx/wx.h>
+#include <string>
 
 #include "wxDFeditApp.h"
+
+using namespace std;
 
 class wxDFeditFrame: public wxFrame
 {
     public:
         wxDFeditFrame(wxFrame *frame, const wxString& title);
         ~wxDFeditFrame();
+
+        static wxString dfeditversion(string versionType);
+
     private:
         enum
         {
