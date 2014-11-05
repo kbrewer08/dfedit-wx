@@ -19,12 +19,14 @@ class wxDFeditFrame: public wxFrame
     private:
         enum
         {
-            idMenuQuit = 1000,
+            idMenuOpen = 1000,
+            idMenuQuit,
             idMenuAbout
         };
-        void OnClose(wxCloseEvent& event);
-        void OnQuit(wxCommandEvent& event);
-        void OnAbout(wxCommandEvent& event);
+        void onOpen  (wxCommandEvent& event);
+        void OnClose (wxCloseEvent& event);
+        void OnQuit  (wxCommandEvent& event);
+        void OnAbout (wxCommandEvent& event);
         DECLARE_EVENT_TABLE()
 };
 

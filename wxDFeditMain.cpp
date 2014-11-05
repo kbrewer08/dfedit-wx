@@ -53,24 +53,26 @@ BEGIN_EVENT_TABLE(wxDFeditFrame, wxFrame)
 END_EVENT_TABLE()
 
 wxDFeditFrame::wxDFeditFrame(wxFrame *frame, const wxString& title)
-    : wxFrame(frame, -1, title)
+    : wxFrame(frame, -1, title, wxPoint(0, 0), wxSize(640, 480))
 {
     // create a menu bar
     wxMenuBar* mbar = new wxMenuBar();
     wxMenu* fileMenu = new wxMenu(_T(""));
-    fileMenu->Append(idMenuQuit, _("&Quit\tAlt-F4"), _("Quit the application"));
+    fileMenu->Append(idMenuQuit, _("&Quit\tAlt-F4"), _("Quit DFedit"));
     mbar->Append(fileMenu, _("&File"));
 
     wxMenu* helpMenu = new wxMenu(_T(""));
-    helpMenu->Append(idMenuAbout, _("&About\tF1"), _("Show info about this application"));
+    helpMenu->Append(idMenuAbout, _("&About\tF1"), _("Show info about DFedit"));
     mbar->Append(helpMenu, _("&Help"));
 
     SetMenuBar(mbar);
 
     // create a status bar with some information about the used wxWidgets version
-    CreateStatusBar(2);
-    SetStatusText(_("Hello Code::Blocks user!"),0);
-    SetStatusText(wxbuildinfo(short_f), 1);
+    CreateStatusBar(1);
+
+    wxString welcome = _T("Welcome to ");
+    welcome << dfeditversion("short") << "!";
+    SetStatusText(welcome, 0);
 
 }
 
