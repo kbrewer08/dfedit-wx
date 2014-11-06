@@ -53,7 +53,7 @@ BEGIN_EVENT_TABLE(wxDFeditFrame, wxFrame)
 END_EVENT_TABLE()
 
 wxDFeditFrame::wxDFeditFrame(wxFrame *frame, const wxString& title)
-    : wxFrame(frame, -1, title, wxPoint(0, 0), wxSize(640, 480))
+    : wxFrame(frame, -1, title, wxPoint(0, 0), wxSize(800, 600))
 {
     // create a menu bar
     wxMenuBar* mbar = new wxMenuBar();
@@ -62,7 +62,7 @@ wxDFeditFrame::wxDFeditFrame(wxFrame *frame, const wxString& title)
     mbar->Append(fileMenu, _("&File"));
 
     wxMenu* helpMenu = new wxMenu(_T(""));
-    helpMenu->Append(idMenuAbout, _("&About\tF1"), _("Show info about DFedit"));
+    helpMenu->Append(idMenuAbout, _("&About\tF1"), _("Show information about DFedit"));
     mbar->Append(helpMenu, _("&Help"));
 
     SetMenuBar(mbar);
@@ -93,7 +93,13 @@ void wxDFeditFrame::OnQuit(wxCommandEvent &event)
 
 void wxDFeditFrame::OnAbout(wxCommandEvent &event)
 {
-    wxString msg = wxbuildinfo(long_f);
+    wxString msg = dfeditversion("short");
+    msg << _("\n\ncreated by ") <<  "Sorinev";
+    msg << "\n\nDragonForceEdit@gmail.com";
+    msg << _("\n\nDragon Force Edit is a utility that lets you change just about ")
+        << _("anything in your Dragon Force save files. Currently, the save ")
+        << _("files that it works with are those created by the SSF emulator ")
+        << _("with the Hook Backup Library option checked.\n\n");
 
     wxString aboutTitle = _T("About ");
     aboutTitle << dfeditversion("short");
