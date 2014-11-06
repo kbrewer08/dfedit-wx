@@ -7,6 +7,7 @@ bool wxDFeditApp::OnInit()
 {
     wxDFeditFrame* frame = new wxDFeditFrame(0L, wxDFeditFrame::dfeditversion("long"));
 
+    frame->CenterOnScreen();
     frame->Show();
 
     return true;

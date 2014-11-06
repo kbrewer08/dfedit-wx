@@ -20,6 +20,7 @@ class wxDFeditFrame: public wxFrame
         enum
         {
             idMenuOpen = 1000,
+            idMenuReload,
             idMenuQuit,
             idMenuAbout
         };
