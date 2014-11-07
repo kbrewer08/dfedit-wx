@@ -28,11 +28,11 @@
 				<Option projectLinkerOptionsRelation="2" />
 				<Compiler>
 					<Add option="-O2" />
-					<Add option="`wx-config  --version=3.0 --static=yes --unicode=no --debug=no --cflags`" />
+					<Add option="`wx-config --cflags`" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
-					<Add option="`wx-config  --version=3.0 --static=yes --unicode=no --debug=no --libs`" />
+					<Add option="`wx-config --libs`" />
 				</Linker>
 			</Target>
 		</Build>

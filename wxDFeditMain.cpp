@@ -59,13 +59,13 @@ wxDFeditFrame::wxDFeditFrame(wxFrame *frame, const wxString& title)
     wxMenuBar* mbar = new wxMenuBar();
     wxMenu* fileMenu = new wxMenu(_T(""));
     fileMenu->Append(idMenuOpen, _("&Open\tCtrl-O"), _("Open a save file"));
-    fileMenu->Append(idMenuOpen, _("&Reload\tCtrl-R"), _("Reload the current save file"));
+    fileMenu->Append(idMenuReload, _("&Reload\tCtrl-R"), _("Reload the current save file"));
     fileMenu->AppendSeparator();
     fileMenu->Append(idMenuQuit, _("&Quit\tAlt-F4"), _("Quit DFedit"));
     mbar->Append(fileMenu, _("&File"));
 
     wxMenu* helpMenu = new wxMenu(_T(""));
-    helpMenu->Append(idMenuAbout, _("&About\tF1"), _("Show information about DFedit"));
+    helpMenu->Append(idMenuAbout, _("&About\tF1"), _("About DFedit"));
     mbar->Append(helpMenu, _("&Help"));
 
     SetMenuBar(mbar);
