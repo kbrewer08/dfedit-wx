@@ -14,7 +14,7 @@ class wxDFeditFrame: public wxFrame
         wxDFeditFrame(wxFrame *frame, const wxString& title);
         ~wxDFeditFrame();
 
-        static wxString dfeditversion(string versionType);
+        static wxString dfeditversion(wxString versionType);
 
     private:
         enum

@@ -28,19 +28,19 @@ wxString wxbuildinfo(wxbuildinfoformat format)
     return wxbuild;
 }
 
-wxString wxDFeditFrame::dfeditversion(string versionType)
+wxString wxDFeditFrame::dfeditversion(wxString versionType)
 {
     wxString version = wxString();
-    if(versionType == "long")
+    if(versionType == wxT("long"))
     {
-        version << _T("Dragon Force Edit ");
-        version << _T(DFEDIT_VERSION);
+        version << wxT("Dragon Force Edit ");
+        version << wxT(DFEDIT_VERSION);
     } else if(versionType == "short"){
-        version << _T("DFedit ");
-        version << _T(DFEDIT_VERSION);
+        version << wxT("DFedit ");
+        version << wxT(DFEDIT_VERSION);
     } else {
-        version << _T("DFedit ");
-        version << _T(DFEDIT_VERSION);
+        version << wxT("DFedit ");
+        version << wxT(DFEDIT_VERSION);
     }
 
     return version;
@@ -57,7 +57,7 @@ wxDFeditFrame::wxDFeditFrame(wxFrame *frame, const wxString& title)
 {
     // create a menu bar
     wxMenuBar* mbar = new wxMenuBar();
-    wxMenu* fileMenu = new wxMenu(_T(""));
+    wxMenu* fileMenu = new wxMenu(wxT(""));
     fileMenu->Append(idMenuOpen, _("&Open\tCtrl-O"), _("Open a save file"));
     fileMenu->Append(idMenuReload, _("&Reload\tCtrl-R"), _("Reload the current save file"));
     fileMenu->AppendSeparator();
@@ -73,12 +73,11 @@ wxDFeditFrame::wxDFeditFrame(wxFrame *frame, const wxString& title)
     // create a status bar with some information about the used wxWidgets version
     CreateStatusBar(1);
 
-    wxString welcome = _T("Welcome to ");
-    welcome << dfeditversion("short") << "!";
+    wxString welcome = _("Welcome to ");
+    welcome << dfeditversion(wxT("short")) << wxT("!");
     SetStatusText(welcome, 0);
 
 }
-
 
 wxDFeditFrame::~wxDFeditFrame()
 {
@@ -96,16 +95,16 @@ void wxDFeditFrame::OnQuit(wxCommandEvent &event)
 
 void wxDFeditFrame::OnAbout(wxCommandEvent &event)
 {
-    wxString msg = dfeditversion("short");
-    msg << _("\n\ncreated by ") <<  "Sorinev";
-    msg << "\n\nDragonForceEdit@gmail.com";
+    wxString msg = dfeditversion(wxT("short"));
+    msg << _("\n\ncreated by ") <<  wxT("Sorinev");
+    msg << wxT("\n\nDragonForceEdit@gmail.com");
     msg << _("\n\nDragon Force Edit is a utility that lets you change just about ")
         << _("anything in your Dragon Force save files. Currently, the save ")
         << _("files that it works with are those created by the SSF emulator ")
         << _("with the Hook Backup Library option checked.\n\n");
 
-    wxString aboutTitle = _T("About ");
-    aboutTitle << dfeditversion("short");
+    wxString aboutTitle = wxT("About ");
+    aboutTitle << dfeditversion(wxT("short"));
 
     wxMessageBox(msg, aboutTitle);
 }
