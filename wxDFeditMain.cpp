@@ -11,8 +11,8 @@ enum wxbuildinfoformat {
 
 BEGIN_EVENT_TABLE(wxDFeditFrame, wxFrame)
     EVT_CLOSE(wxDFeditFrame::OnClose)
-    EVT_MENU(idMenuQuit, wxDFeditFrame::OnQuit)
-    EVT_MENU(idMenuAbout, wxDFeditFrame::OnAbout)
+    EVT_MENU(wxID_EXIT, wxDFeditFrame::OnQuit)
+    EVT_MENU(wxID_ABOUT, wxDFeditFrame::OnAbout)
 END_EVENT_TABLE()
 
 wxDFeditFrame::wxDFeditFrame(wxFrame *frame, const wxString& title)
@@ -21,14 +21,14 @@ wxDFeditFrame::wxDFeditFrame(wxFrame *frame, const wxString& title)
     // create a menu bar
     wxMenuBar* mbar = new wxMenuBar();
     wxMenu* fileMenu = new wxMenu(wxT(""));
-    fileMenu->Append(idMenuOpen, _("&Open\tCtrl-O"), _("Open a save file"));
-    fileMenu->Append(idMenuReload, _("&Reload\tCtrl-R"), _("Reload the current save file"));
+    fileMenu->Append(wxID_OPEN, _("&Open\tCtrl-O"), _("Open a save file"));
+    fileMenu->Append(wxID_REFRESH, _("&Reload\tCtrl-R"), _("Reload the current save file"));
     fileMenu->AppendSeparator();
-    fileMenu->Append(idMenuQuit, _("&Quit\tAlt-F4"), _("Quit DFedit"));
+    fileMenu->Append(wxID_EXIT, _("&Quit\tAlt-F4"), _("Quit DFedit"));
     mbar->Append(fileMenu, _("&File"));
 
     wxMenu* helpMenu = new wxMenu(_T(""));
-    helpMenu->Append(idMenuAbout, _("&About\tF1"), _("About DFedit"));
+    helpMenu->Append(wxID_ABOUT, _("&About\tF1"), _("About DFedit"));
     mbar->Append(helpMenu, _("&Help"));
 
     SetMenuBar(mbar);
