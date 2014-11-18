@@ -1,8 +1,10 @@
 #ifndef WXDFEDITMAIN_H
 #define WXDFEDITMAIN_H
 
-#include <wx/wx.h>
 #include <string>
+
+#include <wx/wx.h>
+#include <wx/notebook.h>
 
 #include "wxDFeditApp.h"
 
@@ -17,17 +19,32 @@ class wxDFeditFrame: public wxFrame
         static wxString dfeditversion(wxString versionType);
 
     private:
+
+        wxNotebook* tabParent;
+
         enum
         {
             idMenuOpen = 1000,
             idMenuReload,
             idMenuQuit,
-            idMenuAbout
+            idMenuAbout,
+
+            idTabParent,
+            idGeneralsTab,
+            idCastlesTab,
+            idDivisionsTab,
+            idItemsTab,
+            idMassEditTab,
+            idKingdomsTab
         };
+
         void onOpen  (wxCommandEvent& event);
         void OnClose (wxCloseEvent& event);
         void OnQuit  (wxCommandEvent& event);
         void OnAbout (wxCommandEvent& event);
+
+        void createTabParent(void);
+
         DECLARE_EVENT_TABLE()
 };
 

@@ -39,6 +39,7 @@ wxDFeditFrame::wxDFeditFrame(wxFrame *frame, const wxString& title)
     welcome << dfeditversion(wxT("short")) << wxT("!");
     SetStatusText(welcome, 0);
 
+    createTabParent();
 }
 
 wxDFeditFrame::~wxDFeditFrame()
@@ -106,4 +107,17 @@ wxString wxDFeditFrame::dfeditversion(wxString versionType)
     }
 
     return version;
+}
+
+void wxDFeditFrame::createTabParent(void)
+{
+    tabParent = new wxNotebook(this, idTabParent);
+    tabParent->AddPage(new wxWindow(tabParent, idGeneralsTab), "Generals", true);
+    tabParent->AddPage(new wxWindow(tabParent, idCastlesTab), "Castles", false);
+    tabParent->AddPage(new wxWindow(tabParent, idDivisionsTab), "Divisions", false);
+    tabParent->AddPage(new wxWindow(tabParent, idItemsTab), "Items", false);
+    tabParent->AddPage(new wxWindow(tabParent, idMassEditTab), "Mass Editing", false);
+    tabParent->AddPage(new wxWindow(tabParent, idKingdomsTab), "Kingdoms", false);
+
+    return;
 }
