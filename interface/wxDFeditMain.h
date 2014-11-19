@@ -20,7 +20,8 @@ class wxDFeditFrame: public wxFrame
 
     private:
 
-        wxAuiNotebook* tabParent;
+        bool           noTabs;
+        wxAuiNotebook* masterTab;
 
         enum
         {
@@ -29,7 +30,7 @@ class wxDFeditFrame: public wxFrame
             idMenuQuit,
             idMenuAbout,
 
-            idTabParent,
+            idMasterTab,
             idGeneralsTab,
             idCastlesTab,
             idDivisionsTab,
@@ -43,7 +44,7 @@ class wxDFeditFrame: public wxFrame
         void OnQuit  (wxCommandEvent& event);
         void OnAbout (wxCommandEvent& event);
 
-        void createTabParent(void);
+        void createMasterTab(void);
 
         DECLARE_EVENT_TABLE()
 };

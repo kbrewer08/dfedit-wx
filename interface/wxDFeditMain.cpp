@@ -39,7 +39,7 @@ wxDFeditFrame::wxDFeditFrame(wxFrame *frame, const wxString& title)
     welcome << dfeditversion(wxT("short")) << wxT("!");
     SetStatusText(welcome, 0);
 
-    createTabParent();
+    createMasterTab();
 }
 
 wxDFeditFrame::~wxDFeditFrame()
@@ -109,15 +109,11 @@ wxString wxDFeditFrame::dfeditversion(wxString versionType)
     return version;
 }
 
-void wxDFeditFrame::createTabParent(void)
+void wxDFeditFrame::createMasterTab(void)
 {
-    tabParent = new wxAuiNotebook(this, idTabParent, wxDefaultPosition, wxDefaultSize, wxAUI_NB_TAB_MOVE | wxAUI_NB_CLOSE_ON_ALL_TABS);
-    tabParent->AddPage(new wxWindow(tabParent, idGeneralsTab), "Generals", true);
-    tabParent->AddPage(new wxWindow(tabParent, idCastlesTab), "Castles", false);
-    tabParent->AddPage(new wxWindow(tabParent, idDivisionsTab), "Divisions", false);
-    tabParent->AddPage(new wxWindow(tabParent, idItemsTab), "Items", false);
-    tabParent->AddPage(new wxWindow(tabParent, idMassEditTab), "Mass Editing", false);
-    tabParent->AddPage(new wxWindow(tabParent, idKingdomsTab), "Kingdoms", false);
+    masterTab = new wxAuiNotebook(this, idMasterTab, wxDefaultPosition, wxDefaultSize, 0);
+    masterTab->AddPage(new wxWindow(masterTab, wxID_ANY), "No files open", true);
+    noTabs = true;
 
     return;
 }
