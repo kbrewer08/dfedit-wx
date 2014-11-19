@@ -4,7 +4,7 @@
 #include <string>
 
 #include <wx/wx.h>
-#include <wx/notebook.h>
+#include <wx/aui/auibook.h>
 
 #include "wxDFeditApp.h"
 
@@ -20,7 +20,7 @@ class wxDFeditFrame: public wxFrame
 
     private:
 
-        wxNotebook* tabParent;
+        wxAuiNotebook* tabParent;
 
         enum
         {

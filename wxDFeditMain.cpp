@@ -111,7 +111,7 @@ wxString wxDFeditFrame::dfeditversion(wxString versionType)
 
 void wxDFeditFrame::createTabParent(void)
 {
-    tabParent = new wxNotebook(this, idTabParent);
+    tabParent = new wxAuiNotebook(this, idTabParent, wxDefaultPosition, wxDefaultSize, wxAUI_NB_TAB_MOVE | wxAUI_NB_CLOSE_ON_ALL_TABS);
     tabParent->AddPage(new wxWindow(tabParent, idGeneralsTab), "Generals", true);
     tabParent->AddPage(new wxWindow(tabParent, idCastlesTab), "Castles", false);
     tabParent->AddPage(new wxWindow(tabParent, idDivisionsTab), "Divisions", false);
