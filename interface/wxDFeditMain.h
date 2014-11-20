@@ -7,6 +7,7 @@
 #include <wx/aui/auibook.h>
 
 #include "wxDFeditApp.h"
+#include "DFTab.h"
 
 using namespace std;
 
@@ -31,12 +32,6 @@ class wxDFeditFrame: public wxFrame
             idMenuAbout,
 
             idMasterTab,
-            idGeneralsTab,
-            idCastlesTab,
-            idDivisionsTab,
-            idItemsTab,
-            idMassEditTab,
-            idKingdomsTab
         };
 
         void onOpen  (wxCommandEvent& event);

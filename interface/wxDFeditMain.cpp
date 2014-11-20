@@ -40,6 +40,7 @@ wxDFeditFrame::wxDFeditFrame(wxFrame *frame, const wxString& title)
     SetStatusText(welcome, 0);
 
     createMasterTab();
+    masterTab->SetWindowStyleFlag(wxAUI_NB_TAB_MOVE | wxAUI_NB_CLOSE_ON_ALL_TABS);
 }
 
 wxDFeditFrame::~wxDFeditFrame()
@@ -112,7 +113,8 @@ wxString wxDFeditFrame::dfeditversion(wxString versionType)
 void wxDFeditFrame::createMasterTab(void)
 {
     masterTab = new wxAuiNotebook(this, idMasterTab, wxDefaultPosition, wxDefaultSize, 0);
-    masterTab->AddPage(new wxWindow(masterTab, wxID_ANY), "No files open", true);
+    masterTab->AddPage(new DFTab(masterTab), "Junon", true);
+    masterTab->AddPage(new DFTab(masterTab), "Goldark", false);
     noTabs = true;
 
     return;
