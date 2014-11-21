@@ -39,10 +39,12 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
-		<Unit filename="wxDFeditApp.cpp" />
-		<Unit filename="wxDFeditApp.h" />
-		<Unit filename="wxDFeditMain.cpp" />
-		<Unit filename="wxDFeditMain.h" />
+		<Unit filename="interface/DFTab.cpp" />
+		<Unit filename="interface/DFTab.h" />
+		<Unit filename="interface/wxDFeditApp.cpp" />
+		<Unit filename="interface/wxDFeditApp.h" />
+		<Unit filename="interface/wxDFeditMain.cpp" />
+		<Unit filename="interface/wxDFeditMain.h" />
 		<Extensions>
 			<envvars />
 			<code_completion />
