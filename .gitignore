@@ -1,4 +1,5 @@
 bin/
 obj/
+crash_reports/
 *.depend
 *.layout
