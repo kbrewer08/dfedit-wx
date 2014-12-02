@@ -11,7 +11,19 @@ public:
     ~GeneralsTab (void){}
 
 private:
-    wxComboBox* generalNamesList;
+    enum
+    {
+        idBasicsStaticBox = 1000;
+        idBasicsGroupBox;
+        idGeneralsListLabel;
+        idGeneralsListComboBox;
+    };
+
+    wxStaticBoxSizer* basicsStaticBox;
+    wxGridBagSizer*   basicsGroupBox;
+    
+    wxStaticText* generalsListLabel;
+    wxComboBox*   generalsListComboBox;
 };
 
 #endif // _GENERALS_TAB_H_

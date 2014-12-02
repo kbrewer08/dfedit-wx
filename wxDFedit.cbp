@@ -41,6 +41,8 @@
 		</Compiler>
 		<Unit filename="interface/DFTab.cpp" />
 		<Unit filename="interface/DFTab.h" />
+		<Unit filename="interface/GeneralsTab.cpp" />
+		<Unit filename="interface/GeneralsTab.h" />
 		<Unit filename="interface/wxDFeditApp.cpp" />
 		<Unit filename="interface/wxDFeditApp.h" />
 		<Unit filename="interface/wxDFeditMain.cpp" />

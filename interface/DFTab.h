@@ -3,6 +3,8 @@
 
 #include <wx/wx.h>
 #include <wx/notebook.h>
+#include <wx/sizer.h>
+#include <wx/gbsizer.h>
 
 class DFTab : public wxNotebook
 {
@@ -22,7 +24,7 @@ private:
             idKingdomsTab
         };
 
-    wxNotebook* dftab;
+    wxNotebook* dftab; //The parent/holder of all the tabs
 };
 
 #endif
