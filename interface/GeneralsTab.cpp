@@ -8,12 +8,17 @@ GeneralsTab::GeneralsTab(void)
 GeneralsTab::GeneralsTab(wxWindow* parent, int id)
     : wxPanel(parent, id)
 {
-    basicsStaticBox = new wxStaticBoxSizer(wxVERTICAL, this, idBasicsStaticBox);
+    basicsStaticBox = new wxStaticBoxSizer(wxHORIZONTAL, this, _("Generals"));
     basicsGroupBox = new wxGridBagSizer();
+    basicsStaticBox->Add(basicsGroupBox);
 
-    wxStaticText* generalsListLabel = new wxStaticText(this, idGeneralsListLabel, "Generals");
-    generalsListComboBox = new wxComboBox(this, idGeneralsListComboBox);
-    generalNamesList->Append(_("Wein"));
-    generalNamesList->Append(_("Goldark"));
-    generalNamesList->Append(_("Teiris"));
+    generalsListLabel = new wxStaticText(basicsStaticBox->GetStaticBox(), idGeneralsListLabel, _("Generals"));
+
+    generalsListComboBox = new wxComboBox(basicsStaticBox->GetStaticBox(), idGeneralsListComboBox);
+    generalsListComboBox->Append(_T("Wein"));
+    generalsListComboBox->Append(_T("Goldark"));
+    generalsListComboBox->Append(_T("Teiris"));
+
+    basicsGroupBox->Add(generalsListLabel, wxGBPosition(0, 0));
+    basicsGroupBox->Add(generalsListComboBox, wxGBPosition(0, 1));
 }

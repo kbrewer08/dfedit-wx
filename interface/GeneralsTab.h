@@ -2,6 +2,8 @@
 #define _GENERALS_TAB_H_
 
 #include <wx/wx.h>
+#include <wx/sizer.h>
+#include <wx/gbsizer.h>
 
 class GeneralsTab : public wxPanel
 {
@@ -13,10 +15,9 @@ public:
 private:
     enum
     {
-        idBasicsStaticBox = 1000;
-        idBasicsGroupBox;
-        idGeneralsListLabel;
-        idGeneralsListComboBox;
+        idBasicsStaticBox = 1000,
+        idGeneralsListLabel,
+        idGeneralsListComboBox
     };
 
     wxStaticBoxSizer* basicsStaticBox;

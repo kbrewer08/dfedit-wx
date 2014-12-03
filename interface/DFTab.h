@@ -3,8 +3,6 @@
 
 #include <wx/wx.h>
 #include <wx/notebook.h>
-#include <wx/sizer.h>
-#include <wx/gbsizer.h>
 
 class DFTab : public wxNotebook
 {

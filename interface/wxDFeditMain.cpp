@@ -16,7 +16,7 @@ BEGIN_EVENT_TABLE(wxDFeditFrame, wxFrame)
 END_EVENT_TABLE()
 
 wxDFeditFrame::wxDFeditFrame(wxFrame *frame, const wxString& title)
-    : wxFrame(frame, -1, title, wxPoint(0, 0), wxSize(800, 600))
+    : wxFrame(frame, wxID_ANY, title, wxPoint(0, 0), wxSize(800, 600))
 {
     // create a menu bar
     wxMenuBar* mbar = new wxMenuBar();
@@ -36,7 +36,7 @@ wxDFeditFrame::wxDFeditFrame(wxFrame *frame, const wxString& title)
     CreateStatusBar(1);
 
     wxString welcome = _("Welcome to ");
-    welcome << dfeditversion(wxT("short")) << wxT("!");
+    welcome << dfeditversion(_T("short")) << _T("!");
     SetStatusText(welcome, 0);
 
     createMasterTab();
@@ -59,16 +59,16 @@ void wxDFeditFrame::OnQuit(wxCommandEvent &event)
 
 void wxDFeditFrame::OnAbout(wxCommandEvent &event)
 {
-    wxString msg = dfeditversion(wxT("short"));
-    msg << _("\n\ncreated by ") <<  wxT("Sorinev");
-    msg << wxT("\n\nDragonForceEdit@gmail.com");
+    wxString msg = dfeditversion(_T("short"));
+    msg << _("\n\ncreated by ") <<  _T("Sorinev");
+    msg << _T("\n\nDragonForceEdit@gmail.com");
     msg << _("\n\nDragon Force Edit is a utility that lets you change just about ")
         << _("anything in your Dragon Force save files. Currently, the save ")
         << _("files that it works with are those created by the SSF emulator ")
         << _("with the Hook Backup Library option checked.\n\n");
 
-    wxString aboutTitle = wxT("About ");
-    aboutTitle << dfeditversion(wxT("short"));
+    wxString aboutTitle = _("About ");
+    aboutTitle << dfeditversion(_T("short"));
 
     wxMessageBox(msg, aboutTitle);
 }
@@ -86,7 +86,7 @@ wxString wxbuildinfo(wxbuildinfoformat format)
 #elif defined(__UNIX__)
         wxbuild << _T("-Linux");
 #endif
-        wxbuild << _T("-Unicode build");
+        wxbuild << _("-Unicode build");
     }
 
     return wxbuild;
@@ -95,16 +95,16 @@ wxString wxbuildinfo(wxbuildinfoformat format)
 wxString wxDFeditFrame::dfeditversion(wxString versionType)
 {
     wxString version = wxString();
-    if(versionType == wxT("long"))
+    if(versionType == _T("long"))
     {
-        version << wxT("Dragon Force Edit ");
-        version << wxT(DFEDIT_VERSION);
+        version << _T("Dragon Force Edit ");
+        version << _T(DFEDIT_VERSION);
     } else if(versionType == "short"){
-        version << wxT("DFedit ");
-        version << wxT(DFEDIT_VERSION);
+        version << _T("DFedit ");
+        version << _T(DFEDIT_VERSION);
     } else {
-        version << wxT("DFedit ");
-        version << wxT(DFEDIT_VERSION);
+        version << _T("DFedit ");
+        version << _T(DFEDIT_VERSION);
     }
 
     return version;
@@ -113,8 +113,8 @@ wxString wxDFeditFrame::dfeditversion(wxString versionType)
 void wxDFeditFrame::createMasterTab(void)
 {
     masterTab = new wxAuiNotebook(this, idMasterTab, wxDefaultPosition, wxDefaultSize, 0);
-    masterTab->AddPage(new DFTab(masterTab), "Junon", true);
-    masterTab->AddPage(new DFTab(masterTab), "Goldark", false);
+    masterTab->AddPage(new DFTab(masterTab), _T("Junon"), true);
+    masterTab->AddPage(new DFTab(masterTab), _T("Goldark"), false);
     noTabs = true;
 
     return;
