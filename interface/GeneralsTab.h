@@ -4,6 +4,10 @@
 #include <wx/wx.h>
 #include <wx/sizer.h>
 #include <wx/gbsizer.h>
+#include <wx/aui/auibook.h>
+
+#include "DFTab.h"
+#include "wxDFeditMain.h"
 
 class GeneralsTab : public wxPanel
 {
@@ -15,12 +19,25 @@ public:
 private:
     enum
     {
-        idBasicsStaticBox = 1000,
+        idMasterSizer = 9000,
+        idBasicsStaticBox,
+        idWeaknessesStaticBox,
+        idStatusInfoStaticBox,
+        idMedalsStaticBox,
+        idLocationStaticBox,
+        idUnknownStatsStaticBox,
         idGeneralsListLabel,
         idGeneralsListComboBox
     };
 
+    wxGridSizer*      masterSizer;
     wxStaticBoxSizer* basicsStaticBox;
+    wxStaticBoxSizer* weaknessesStaticBox;
+    wxStaticBoxSizer* statusInfoStaticBox;
+    wxStaticBoxSizer* medalsStaticBox;
+    wxStaticBoxSizer* locationStaticBox;
+    wxStaticBoxSizer* unknownStatsStaticBox;
+
     wxGridBagSizer*   basicsGroupBox;
     
     wxStaticText* generalsListLabel;
