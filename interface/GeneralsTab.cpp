@@ -11,25 +11,24 @@ GeneralsTab::GeneralsTab(wxWindow* parent, int id)
     masterSizer = new wxGridSizer(2, 3, 50, 50);
     
     basicsStaticBox       = new wxStaticBoxSizer(wxHORIZONTAL, this, _("Basic"));
-    weaknessesStaticBox   = new wxStaticBoxSizer(wxHORIZONTAL, this, _("Weakness Against"));
-/*    statusInfoStaticBox   = new wxStaticBoxSizer(wxHORIZONTAL, this, _("Status"));
+/*    weaknessesStaticBox   = new wxStaticBoxSizer(wxHORIZONTAL, this, _("Weakness Against"));
+    statusInfoStaticBox   = new wxStaticBoxSizer(wxHORIZONTAL, this, _("Status"));
     medalsStaticBox       = new wxStaticBoxSizer(wxHORIZONTAL, this, _("Troops & Medals"));
     locationStaticBox     = new wxStaticBoxSizer(wxHORIZONTAL, this, _("Location Editing"));
     unknownStatsStaticBox = new wxStaticBoxSizer(wxHORIZONTAL, this, _("Unknown"));
 */
     masterSizer->Add(basicsStaticBox,       0, wxALIGN_CENTER_VERTICAL | wxALIGN_CENTER_HORIZONTAL | wxALL, 5);
-    masterSizer->Add(weaknessesStaticBox,   0, wxALIGN_CENTER_VERTICAL | wxALIGN_CENTER_HORIZONTAL | wxALL, 5);
-/*    masterSizer->Add(statusInfoStaticBox,   0, wxALIGN_CENTER_VERTICAL | wxALIGN_CENTER_HORIZONTAL | wxALL, 5);
+/*    masterSizer->Add(weaknessesStaticBox,   0, wxALIGN_CENTER_VERTICAL | wxALIGN_CENTER_HORIZONTAL | wxALL, 5);
+    masterSizer->Add(statusInfoStaticBox,   0, wxALIGN_CENTER_VERTICAL | wxALIGN_CENTER_HORIZONTAL | wxALL, 5);
     masterSizer->Add(medalsStaticBox,       0, wxALIGN_CENTER_VERTICAL | wxALIGN_CENTER_HORIZONTAL | wxALL, 5);
     masterSizer->Add(locationStaticBox,     0, wxALIGN_CENTER_VERTICAL | wxALIGN_CENTER_HORIZONTAL | wxALL, 5);
     masterSizer->Add(unknownStatsStaticBox, 0, wxALIGN_CENTER_VERTICAL | wxALIGN_CENTER_HORIZONTAL | wxALL, 5);
 */
     basicsGroupBox = new wxGridBagSizer();
     basicsStaticBox->Add(basicsGroupBox);
-DFTab* dftab = (DFTab*)GetParent();
-wxAuiNotebook* mt = (wxAuiNotebook*)(dftab->GetParent());
-wxDFeditFrame* dfef = (wxDFeditFrame*)(mt->GetParent());
-//dfef->SetSizer(masterSizer);
+
+    DFTab* dftab = (DFTab*)GetParent();
+    //wxAuiNotebook* mt = (wxAuiNotebook*)(dftab->GetParent());
 
     generalsListLabel = new wxStaticText(basicsStaticBox->GetStaticBox(), idGeneralsListLabel, _("Generals"));
 
