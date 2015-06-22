@@ -8,7 +8,7 @@ GeneralsTab::GeneralsTab(void)
 GeneralsTab::GeneralsTab(wxWindow* parent, int id)
     : wxPanel(parent, id)
 {
-    masterSizer = new wxGridSizer(2, 3, 5, 5);
+    masterSizer = new wxGridSizer(2, 3, 2, 2);
     SetSizerAndFit(masterSizer);
 
     basicsStaticBox       = new wxStaticBoxSizer(wxHORIZONTAL, this, _("Basics"));
@@ -29,9 +29,11 @@ GeneralsTab::GeneralsTab(wxWindow* parent, int id)
     basicsStaticBox->Add(generalsListLabel);
     
     generalsListComboBox = new wxComboBox(basicsStaticBox->GetStaticBox(), idGeneralsListComboBox,
-                                          wxEmptyString, wxDefaultPosition, wxDefaultSize, 0, NULL, wxCB_READONLY | wxTE_PROCESS_ENTER);
+                                          wxEmptyString, wxDefaultPosition, wxDefaultSize, 0, NULL,
+                                          wxCB_READONLY | wxTE_PROCESS_ENTER);
     generalsListComboBox->Append(_T("Wein"));
     generalsListComboBox->Append(_T("Goldark"));
     generalsListComboBox->Append(_T("Teiris"));
+    generalsListComboBox->SetSelection(0);
     basicsStaticBox->Add(generalsListComboBox);
 }
