@@ -25,8 +25,11 @@ GeneralsTab::GeneralsTab(wxWindow* parent, int id)
     masterSizer->Add(locationStaticBox,     0, wxALIGN_LEFT | wxEXPAND);
     masterSizer->Add(unknownStatsStaticBox, 0, wxALIGN_LEFT | wxEXPAND);
 
+    wxGridBagSizer* gbs = new wxGridBagSizer(2, 2);
+    basicsStaticBox->Add(gbs);
+
     generalsListLabel = new wxStaticText(basicsStaticBox->GetStaticBox(), idGeneralsListLabel, _("General: "));
-    basicsStaticBox->Add(generalsListLabel);
+    gbs->Add(generalsListLabel, wxGBPosition(0, 0));
     
     generalsListComboBox = new wxComboBox(basicsStaticBox->GetStaticBox(), idGeneralsListComboBox,
                                           wxEmptyString, wxDefaultPosition, wxDefaultSize, 0, NULL,
@@ -35,5 +38,5 @@ GeneralsTab::GeneralsTab(wxWindow* parent, int id)
     generalsListComboBox->Append(_T("Goldark"));
     generalsListComboBox->Append(_T("Teiris"));
     generalsListComboBox->SetSelection(0);
-    basicsStaticBox->Add(generalsListComboBox);
+    gbs->Add(generalsListComboBox, wxGBPosition(0, 1));
 }
