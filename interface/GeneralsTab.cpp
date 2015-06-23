@@ -25,7 +25,7 @@ GeneralsTab::GeneralsTab(wxWindow* parent, int id)
     masterSizer->Add(locationStaticBox,     0, wxALIGN_LEFT | wxEXPAND);
     masterSizer->Add(unknownStatsStaticBox, 0, wxALIGN_LEFT | wxEXPAND);
 
-    generalsListLabel = new wxStaticText(basicsStaticBox->GetStaticBox(), idGeneralsListLabel, _("Generals: "));
+    generalsListLabel = new wxStaticText(basicsStaticBox->GetStaticBox(), idGeneralsListLabel, _("General: "));
     basicsStaticBox->Add(generalsListLabel);
     
     generalsListComboBox = new wxComboBox(basicsStaticBox->GetStaticBox(), idGeneralsListComboBox,
