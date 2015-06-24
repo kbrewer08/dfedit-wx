@@ -27,7 +27,10 @@ private:
         idLocationStaticBox,
         idUnknownStatsStaticBox,
         idGeneralsListLabel,
-        idGeneralsListComboBox
+        idGeneralsListComboBox,
+        idOfficerOwnerLabel,
+        idOfficerOwnerComboBox,
+        idOfficerOwnerSetButton
     };
 
     wxGridSizer*      masterSizer;
@@ -42,6 +45,13 @@ private:
     
     wxStaticText* generalsListLabel;
     wxComboBox*   generalsListComboBox;
+    wxStaticText* officerOwnerLabel;
+    wxComboBox*   officerOwnerComboBox;
+    wxButton*     officerOwnerSetButton;
+
+    void setNewOwner(wxCommandEvent& event);
+
+    DECLARE_EVENT_TABLE()
 };
 
 #endif // _GENERALS_TAB_H_

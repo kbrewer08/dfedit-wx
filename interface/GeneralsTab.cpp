@@ -1,5 +1,9 @@
 #include "GeneralsTab.h"
 
+BEGIN_EVENT_TABLE(GeneralsTab, wxPanel)
+    EVT_BUTTON(idOfficerOwnerSetButton, GeneralsTab::setNewOwner)
+END_EVENT_TABLE()
+
 GeneralsTab::GeneralsTab(void)
 {
     
@@ -30,7 +34,10 @@ GeneralsTab::GeneralsTab(wxWindow* parent, int id)
 
     generalsListLabel = new wxStaticText(basicsStaticBox->GetStaticBox(), idGeneralsListLabel, _("General: "));
     gbs->Add(generalsListLabel, wxGBPosition(0, 0));
-    
+
+    officerOwnerLabel = new wxStaticText(basicsStaticBox->GetStaticBox(), idOfficerOwnerLabel, _("Owner: "));
+    gbs->Add(officerOwnerLabel, wxGBPosition(1, 0));
+
     generalsListComboBox = new wxComboBox(basicsStaticBox->GetStaticBox(), idGeneralsListComboBox,
                                           wxEmptyString, wxDefaultPosition, wxDefaultSize, 0, NULL,
                                           wxCB_READONLY | wxTE_PROCESS_ENTER);
@@ -39,4 +46,21 @@ GeneralsTab::GeneralsTab(wxWindow* parent, int id)
     generalsListComboBox->Append(_T("Teiris"));
     generalsListComboBox->SetSelection(0);
     gbs->Add(generalsListComboBox, wxGBPosition(0, 1));
+
+    officerOwnerComboBox = new wxComboBox(basicsStaticBox->GetStaticBox(), idOfficerOwnerComboBox,
+                                          wxEmptyString, wxDefaultPosition, wxDefaultSize, 0, NULL,
+                                          wxCB_READONLY | wxTE_PROCESS_ENTER);
+    officerOwnerComboBox->Append(_T("Wein"));
+    officerOwnerComboBox->Append(_T("Goldark"));
+    officerOwnerComboBox->Append(_T("Teiris"));
+    officerOwnerComboBox->SetSelection(0);
+    gbs->Add(officerOwnerComboBox, wxGBPosition(1, 1));
+
+    officerOwnerSetButton = new wxButton(basicsStaticBox->GetStaticBox(), idOfficerOwnerSetButton, _("Set"));
+    gbs->Add(officerOwnerSetButton, wxGBPosition(1, 2));
+}
+
+void GeneralsTab::setNewOwner(wxCommandEvent& event)
+{
+    wxMessageBox(_("The button to set a new owner for this officer was clicked."), _("Set new owner"));
 }
