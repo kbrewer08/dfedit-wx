@@ -1,7 +1,8 @@
 #include "GeneralsTab.h"
 
 BEGIN_EVENT_TABLE(GeneralsTab, wxPanel)
-    EVT_BUTTON(idOfficerOwnerSetButton, GeneralsTab::setNewOwner)
+    EVT_BUTTON(idOfficerOwnerSetButton, GeneralsTab::setGeneralOwner)
+    EVT_BUTTON(idGeneralLevelSetButton, GeneralsTab::setGeneralLevel)
 END_EVENT_TABLE()
 
 GeneralsTab::GeneralsTab(void)
@@ -35,9 +36,6 @@ GeneralsTab::GeneralsTab(wxWindow* parent, int id)
     generalsListLabel = new wxStaticText(basicsStaticBox->GetStaticBox(), idGeneralsListLabel, _("General: "));
     gbs->Add(generalsListLabel, wxGBPosition(0, 0));
 
-    officerOwnerLabel = new wxStaticText(basicsStaticBox->GetStaticBox(), idOfficerOwnerLabel, _("Owner: "));
-    gbs->Add(officerOwnerLabel, wxGBPosition(1, 0));
-
     generalsListComboBox = new wxComboBox(basicsStaticBox->GetStaticBox(), idGeneralsListComboBox,
                                           wxEmptyString, wxDefaultPosition, wxDefaultSize, 0, NULL,
                                           wxCB_READONLY | wxTE_PROCESS_ENTER);
@@ -46,6 +44,9 @@ GeneralsTab::GeneralsTab(wxWindow* parent, int id)
     generalsListComboBox->Append(_T("Teiris"));
     generalsListComboBox->SetSelection(0);
     gbs->Add(generalsListComboBox, wxGBPosition(0, 1));
+
+    officerOwnerLabel = new wxStaticText(basicsStaticBox->GetStaticBox(), idOfficerOwnerLabel, _("Owner: "));
+    gbs->Add(officerOwnerLabel, wxGBPosition(1, 0));
 
     officerOwnerComboBox = new wxComboBox(basicsStaticBox->GetStaticBox(), idOfficerOwnerComboBox,
                                           wxEmptyString, wxDefaultPosition, wxDefaultSize, 0, NULL,
@@ -58,9 +59,24 @@ GeneralsTab::GeneralsTab(wxWindow* parent, int id)
 
     officerOwnerSetButton = new wxButton(basicsStaticBox->GetStaticBox(), idOfficerOwnerSetButton, _("Set"));
     gbs->Add(officerOwnerSetButton, wxGBPosition(1, 2));
+
+    generalLevelLabel = new wxStaticText(basicsStaticBox->GetStaticBox(), idGeneralLevelLabel, _("Level: "));
+    gbs->Add(generalLevelLabel, wxGBPosition(2, 0));
+
+    generalLevelEditBox = new wxTextCtrl(basicsStaticBox->GetStaticBox(), idGeneralLevelEditBox, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxTE_PROCESS_ENTER);
+    gbs->Add(generalLevelEditBox, wxGBPosition(2, 1));
+
+    generalLevelSetButton = new wxButton(basicsStaticBox->GetStaticBox(), idGeneralLevelSetButton, _("Set"));
+    gbs->Add(generalLevelSetButton, wxGBPosition(2, 2));
+
 }
 
-void GeneralsTab::setNewOwner(wxCommandEvent& event)
+void GeneralsTab::setGeneralOwner(wxCommandEvent& event)
 {
     wxMessageBox(_("The button to set a new owner for this officer was clicked."), _("Set new owner"));
+}
+
+void GeneralsTab::setGeneralLevel(wxCommandEvent& event)
+{
+    wxMessageBox(_("The button to set a General's level was clicked."), _("Set General Level"));
 }

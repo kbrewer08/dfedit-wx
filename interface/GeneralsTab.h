@@ -5,6 +5,7 @@
 #include <wx/sizer.h>
 #include <wx/gbsizer.h>
 #include <wx/aui/auibook.h>
+#include <wx/textctrl.h>
 
 #include "DFTab.h"
 #include "wxDFeditMain.h"
@@ -30,7 +31,34 @@ private:
         idGeneralsListComboBox,
         idOfficerOwnerLabel,
         idOfficerOwnerComboBox,
-        idOfficerOwnerSetButton
+        idOfficerOwnerSetButton,
+        idGeneralLevelLabel,
+        idGeneralLevelEditBox,
+        idGeneralLevelSetButton,
+        idGeneralExperienceLabel,
+        idGeneralExperienceEditBox,
+        idGeneralExperienceSetButton,
+        idGeneralCurHpLabel,
+        idGeneralCurHpEditBox,
+        idGeneralCurHpSetButton,
+        idGeneralMaxHpLabel,
+        idGeneralMaxHpEditBox,
+        idGeneralMaxHpSetButton,
+        idGeneralCurMpLabel,
+        idGeneralCurMpEditBox,
+        idGeneralCurMxpSetButton,
+        idGeneralMaxMpLabel,
+        idGeneralMaxMpEditBox,
+        idGeneralMaxMpSetButton,
+        idGeneralStrLabel,
+        idGeneralStrEditBox,
+        idGeneralStrSetButton,
+        idGeneralComLabel,
+        idGeneralComEditBox,
+        idGeneralComSetButton,
+        idGeneralIntLabel,
+        idGeneralIntEditBox,
+        idGeneralIntSetButton
     };
 
     wxGridSizer*      masterSizer;
@@ -48,8 +76,12 @@ private:
     wxStaticText* officerOwnerLabel;
     wxComboBox*   officerOwnerComboBox;
     wxButton*     officerOwnerSetButton;
+    wxStaticText* generalLevelLabel;
+    wxTextCtrl*   generalLevelEditBox;
+    wxButton*     generalLevelSetButton;
 
-    void setNewOwner(wxCommandEvent& event);
+    void setGeneralOwner(wxCommandEvent& event);
+    void setGeneralLevel(wxCommandEvent& event);
 
     DECLARE_EVENT_TABLE()
 };
