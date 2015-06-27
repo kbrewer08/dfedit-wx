@@ -2,7 +2,9 @@
 
 BEGIN_EVENT_TABLE(GeneralsTab, wxPanel)
     EVT_BUTTON(idOfficerOwnerSetButton, GeneralsTab::setGeneralOwner)
+    EVT_TEXT_ENTER(idOfficerOwnerComboBox, GeneralsTab::setGeneralOwner)
     EVT_BUTTON(idGeneralLevelSetButton, GeneralsTab::setGeneralLevel)
+    EVT_TEXT_ENTER(idGeneralLevelEditBox, GeneralsTab::setGeneralLevel)
 END_EVENT_TABLE()
 
 GeneralsTab::GeneralsTab(void)
