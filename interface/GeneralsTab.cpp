@@ -36,7 +36,7 @@ GeneralsTab::GeneralsTab(wxWindow* parent, int id)
     basicsStaticBox->Add(gbs);
 
     generalsListLabel = new wxStaticText(basicsStaticBox->GetStaticBox(), idGeneralsListLabel, _("General: "));
-    gbs->Add(generalsListLabel, wxGBPosition(0, 0));
+    gbs->Add(generalsListLabel, wxGBPosition(0, 0), wxDefaultSpan, wxALIGN_CENTER_VERTICAL);
 
     generalsListComboBox = new wxComboBox(basicsStaticBox->GetStaticBox(), idGeneralsListComboBox,
                                           wxEmptyString, wxDefaultPosition, wxDefaultSize, 0, NULL,
@@ -48,7 +48,7 @@ GeneralsTab::GeneralsTab(wxWindow* parent, int id)
     gbs->Add(generalsListComboBox, wxGBPosition(0, 1));
 
     officerOwnerLabel = new wxStaticText(basicsStaticBox->GetStaticBox(), idOfficerOwnerLabel, _("Owner: "));
-    gbs->Add(officerOwnerLabel, wxGBPosition(1, 0));
+    gbs->Add(officerOwnerLabel, wxGBPosition(1, 0), wxDefaultSpan, wxALIGN_CENTER_VERTICAL);
 
     officerOwnerComboBox = new wxComboBox(basicsStaticBox->GetStaticBox(), idOfficerOwnerComboBox,
                                           wxEmptyString, wxDefaultPosition, wxDefaultSize, 0, NULL,
@@ -63,7 +63,7 @@ GeneralsTab::GeneralsTab(wxWindow* parent, int id)
     gbs->Add(officerOwnerSetButton, wxGBPosition(1, 2));
 
     generalLevelLabel = new wxStaticText(basicsStaticBox->GetStaticBox(), idGeneralLevelLabel, _("Level: "));
-    gbs->Add(generalLevelLabel, wxGBPosition(2, 0));
+    gbs->Add(generalLevelLabel, wxGBPosition(2, 0), wxDefaultSpan, wxALIGN_CENTER_VERTICAL);
 
     generalLevelEditBox = new wxTextCtrl(basicsStaticBox->GetStaticBox(), idGeneralLevelEditBox, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxTE_PROCESS_ENTER);
     gbs->Add(generalLevelEditBox, wxGBPosition(2, 1));
