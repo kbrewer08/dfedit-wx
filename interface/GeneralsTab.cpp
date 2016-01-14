@@ -44,8 +44,9 @@ GeneralsTab::GeneralsTab(wxWindow* parent, int id)
     generalsListComboBox->Append(_T("Wein"));
     generalsListComboBox->Append(_T("Goldark"));
     generalsListComboBox->Append(_T("Teiris"));
+    generalsListComboBox->Append(_T("Katmando(1)"));
     generalsListComboBox->SetSelection(0);
-    gbs->Add(generalsListComboBox, wxGBPosition(0, 1));
+    gbs->Add(generalsListComboBox, wxGBPosition(0, 1), wxDefaultSpan, wxALIGN_CENTER_VERTICAL);
 
     officerOwnerLabel = new wxStaticText(basicsStaticBox->GetStaticBox(), idOfficerOwnerLabel, _("Owner: "));
     gbs->Add(officerOwnerLabel, wxGBPosition(1, 0), wxDefaultSpan, wxALIGN_CENTER_VERTICAL);
@@ -56,20 +57,21 @@ GeneralsTab::GeneralsTab(wxWindow* parent, int id)
     officerOwnerComboBox->Append(_T("Wein"));
     officerOwnerComboBox->Append(_T("Goldark"));
     officerOwnerComboBox->Append(_T("Teiris"));
+    officerOwnerComboBox->Append(_T("Katmando(1)"));
     officerOwnerComboBox->SetSelection(0);
-    gbs->Add(officerOwnerComboBox, wxGBPosition(1, 1));
+    gbs->Add(officerOwnerComboBox, wxGBPosition(1, 1), wxDefaultSpan, wxALIGN_CENTER_VERTICAL);
 
     officerOwnerSetButton = new wxButton(basicsStaticBox->GetStaticBox(), idOfficerOwnerSetButton, _("Set"));
-    gbs->Add(officerOwnerSetButton, wxGBPosition(1, 2));
+    gbs->Add(officerOwnerSetButton, wxGBPosition(1, 2), wxDefaultSpan, wxALIGN_CENTER_VERTICAL);
 
     generalLevelLabel = new wxStaticText(basicsStaticBox->GetStaticBox(), idGeneralLevelLabel, _("Level: "));
     gbs->Add(generalLevelLabel, wxGBPosition(2, 0), wxDefaultSpan, wxALIGN_CENTER_VERTICAL);
 
     generalLevelEditBox = new wxTextCtrl(basicsStaticBox->GetStaticBox(), idGeneralLevelEditBox, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxTE_PROCESS_ENTER);
-    gbs->Add(generalLevelEditBox, wxGBPosition(2, 1));
+    gbs->Add(generalLevelEditBox, wxGBPosition(2, 1), wxDefaultSpan, wxALIGN_CENTER_VERTICAL);
 
     generalLevelSetButton = new wxButton(basicsStaticBox->GetStaticBox(), idGeneralLevelSetButton, _("Set"));
-    gbs->Add(generalLevelSetButton, wxGBPosition(2, 2));
+    gbs->Add(generalLevelSetButton, wxGBPosition(2, 2), wxDefaultSpan, wxALIGN_CENTER_VERTICAL);
 
 }
 
