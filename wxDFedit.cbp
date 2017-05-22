@@ -39,6 +39,18 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="implementation/Castle.cpp" />
+		<Unit filename="implementation/Castle.h" />
+		<Unit filename="implementation/Division.cpp" />
+		<Unit filename="implementation/Division.h" />
+		<Unit filename="implementation/DragonForce.cpp" />
+		<Unit filename="implementation/DragonForce.h" />
+		<Unit filename="implementation/FileReader.cpp" />
+		<Unit filename="implementation/FileReader.h" />
+		<Unit filename="implementation/FileWriter.cpp" />
+		<Unit filename="implementation/FileWriter.h" />
+		<Unit filename="implementation/General.cpp" />
+		<Unit filename="implementation/General.h" />
 		<Unit filename="interface/DFTab.cpp" />
 		<Unit filename="interface/DFTab.h" />
 		<Unit filename="interface/GeneralsTab.cpp" />
